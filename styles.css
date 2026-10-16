@@ -1,12 +1,12 @@
 :root {
-  --fondo-1: #0b0618;
-  --fondo-2: #1a0b3b;
-  --cristal: rgba(168, 85, 247, 0.18);
-  --neon: #c084fc;
-  --acento: #f0abfc;
-  --texto: #f3e8ff;
-  --glow: rgba(192, 132, 252, 0.55);
-  --oscuro: #1a0b3b;
+  --fondo-1: #000000;
+  --fondo-2: #141414;
+  --cristal: rgba(255, 255, 255, 0.08);
+  --neon: #d4d4d8;
+  --acento: #ffffff;
+  --texto: #f5f5f5;
+  --glow: rgba(255, 255, 255, 0.35);
+  --oscuro: #0a0a0a;
 }
 
 * {
