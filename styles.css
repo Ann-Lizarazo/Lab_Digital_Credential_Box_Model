@@ -1,0 +1,276 @@
+:root {
+  /* ----- Paleta A: MORADO ----- */
+  --fondo-1: #0b0618;
+  --fondo-2: #1a0b3b;
+  --cristal: rgba(168, 85, 247, 0.18);
+  --neon: #c084fc;
+  --acento: #f0abfc;
+  --texto: #f3e8ff;
+  --glow: rgba(192, 132, 252, 0.55);
+  --oscuro: #1a0b3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- Página: centrado con Flexbox ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Exo 2", sans-serif;
+  color: var(--texto);
+  background:
+    radial-gradient(circle at 15% 20%, var(--glow), transparent 40%),
+    radial-gradient(circle at 85% 85%, var(--glow), transparent 40%),
+    linear-gradient(135deg, var(--fondo-1), var(--fondo-2));
+}
+
+/* ---------- Tarjeta (cristal) ---------- */
+.credencial {
+  position: relative; /* padre de la insignia (Position) */
+  width: 540px;
+  min-height: 340px;
+  padding: 18px 24px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--neon);
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--cristal), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 30px var(--glow),
+    inset 0 0 25px var(--cristal);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.credencial:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 50px var(--glow),
+    inset 0 0 35px var(--cristal);
+}
+
+/* ---------- Insignia VERIFIED (position absolute en la esquina) ---------- */
+.credencial::before {
+  content: "VERIFIED";
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  padding: 6px 16px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--oscuro);
+  background: linear-gradient(90deg, var(--acento), var(--neon));
+  border-radius: 10px;
+  box-shadow: 0 0 14px var(--glow);
+}
+
+/* ---------- 1. Encabezado ---------- */
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--neon);
+}
+
+.firma {
+  margin: 0;
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--acento);
+  text-shadow: 0 0 10px var(--glow);
+}
+
+/* Bandera de Colombia */
+.bandera {
+  width: 38px;
+  height: 26px;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, #fcd116 0 50%, #003893 50% 75%, #ce1126 75% 100%);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+.rol {
+  margin: 0;
+  padding: 5px 12px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 1px solid var(--neon);
+  border-radius: 8px;
+  background: var(--cristal);
+}
+
+/* ---------- 2. Información ---------- */
+.informacion {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Foto con marco neón */
+.foto {
+  position: relative; /* padre de la etiqueta ONLINE */
+  width: 130px;
+  height: 160px;
+  margin: 0;
+  padding: 5px;
+  border: 2px solid var(--neon);
+  border-radius: 16px;
+  background: var(--cristal);
+  box-shadow: 0 0 18px var(--glow);
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 11px;
+}
+
+/* DESAFÍO BONUS: etiqueta ONLINE sobre la foto, solo con CSS */
+.foto::after {
+  content: "ONLINE";
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 2px 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #052e16;
+  background: #4ade80;
+  border-radius: 999px;
+  box-shadow: 0 0 10px #4ade80;
+}
+
+/* Datos */
+.datos {
+  flex: 1;
+}
+
+.campos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campos li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 26px;
+}
+
+.etiqueta {
+  width: 68px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.valor {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Iconos con estilo propio */
+.campos i,
+.extras i {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  color: var(--neon);
+  border: 1px solid var(--neon);
+  border-radius: 8px;
+  background: var(--cristal);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.campos i {
+  margin-left: auto; /* el icono se va al borde derecho de la fila */
+}
+
+.campos li:hover i,
+.extras li:hover i {
+  transform: scale(1.15);
+  color: var(--oscuro);
+  background: var(--neon);
+  box-shadow: 0 0 14px var(--neon);
+}
+
+/* Fila de tecnologías, pasatiempo y GitHub */
+.extras {
+  margin: 12px 0 0;
+  padding: 10px 0 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px dashed var(--neon);
+}
+
+.extras li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Los dos iconos de tecnologías quedan juntos */
+.extras li:first-child {
+  gap: 4px;
+}
+
+/* Enlace de GitHub: hereda el estilo del resto de la fila */
+.extras a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.extras a:hover {
+  color: var(--acento);
+  text-shadow: 0 0 8px var(--glow);
+}
+
+/* ---------- 3. Pie ---------- */
+.pie {
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid var(--neon);
+}
+
+.pie p {
+  margin: 0;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--acento);
+}
