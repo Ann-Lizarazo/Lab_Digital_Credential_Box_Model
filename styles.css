@@ -1,5 +1,4 @@
 :root {
-  /* ----- Paleta A: MORADO ----- */
   --fondo-1: #0b0618;
   --fondo-2: #1a0b3b;
   --cristal: rgba(168, 85, 247, 0.18);
@@ -29,7 +28,7 @@ body {
     linear-gradient(135deg, var(--fondo-1), var(--fondo-2));
 }
 
-/* ---------- Tarjeta (cristal) ---------- */
+/* ---------- Tarjeta ---------- */
 .credencial {
   position: relative; /* padre de la insignia (Position) */
   width: 540px;
@@ -74,7 +73,8 @@ body {
   box-shadow: 0 0 14px var(--glow);
 }
 
-/* ---------- 1. Encabezado ---------- */
+
+
 .encabezado {
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,8 @@ body {
   text-shadow: 0 0 10px var(--glow);
 }
 
-/* Bandera de Colombia */
+
+
 .bandera {
   width: 38px;
   height: 26px;
@@ -113,7 +114,8 @@ body {
   background: var(--cristal);
 }
 
-/* ---------- 2. Información ---------- */
+
+
 .informacion {
   flex: 1;
   display: flex;
@@ -121,7 +123,7 @@ body {
   gap: 20px;
 }
 
-/* Foto con marco neón */
+
 .foto {
   position: relative; /* padre de la etiqueta ONLINE */
   width: 130px;
@@ -142,7 +144,8 @@ body {
   border-radius: 11px;
 }
 
-/* DESAFÍO BONUS: etiqueta ONLINE sobre la foto, solo con CSS */
+
+/* Online sobrepuesto */
 .foto::after {
   content: "ONLINE";
   position: absolute;
@@ -260,7 +263,7 @@ body {
   text-shadow: 0 0 8px var(--glow);
 }
 
-/* ---------- 3. Pie ---------- */
+/*  Pie  */
 .pie {
   padding-top: 10px;
   text-align: center;
